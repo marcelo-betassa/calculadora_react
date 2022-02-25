@@ -58,7 +58,7 @@ export default class Calculator extends Component {
                         values[0] = 0;
                         setTimeout(() => {
                             this.clearMemory();
-                        },1000);
+                        },700);
                             return
                     } else {
                         values[0] = values[0] / values[1];
@@ -89,6 +89,10 @@ export default class Calculator extends Component {
     }
 
     addDigit(n) {
+        if (n.length > 0 && n < 1 && n > 0 && n.includes('.')) {
+            console.log('caiu aqui...');
+            '0 '.concat('.')
+        }
         if (n === '.' && this.state.displayValue.includes('.')) {
             return
         }
@@ -137,6 +141,6 @@ export default class Calculator extends Component {
             </div>
         );
     }
-    
+
 
 }
